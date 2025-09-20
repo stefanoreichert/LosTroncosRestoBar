@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Troncos Resto Bar - Experiencia Gourmet en Puerto Rico, Misiones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons for social media and dropdown arrows -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            /* Neutral and professional colors for a sophisticated touch */
+            --primary-color: #5C7C8A; /* Muted blue-green, professional */
+            --secondary-color: #A86443; /* Terracota / Burnt orange for warm accents */
+            --text-dark: #333333; /* Dark gray for main text */
+            --text-light: #F8F8F8; /* Off-white for text on dark backgrounds */
+            --bg-light: #F5F5F5; /* Very light gray for section backgrounds */
+            --bg-dark: #2C3E50; /* Dark blue-gray for header and footer */
+            --border-color: #E0E0E0; /* Light gray for subtle borders */
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* --- Header and Navigation --- */
+        header { /* Reverted to original header styles */
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 2.5em 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            display: flex; /* To center content (logo and text) */
+            flex-direction: column; /* Stack logo and text vertically */
+            align-items: center; /* Horizontally center */
+            justify-content: center; /* Vertically center */
+        }
+
+        /* Style for the logo container (the "professional gray box") */
+        .logo-box {
+            background-color: white;
+            padding: 1.5em 2em; /* Inner spacing of the box */
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Gray shadow for professional effect */
+            margin-bottom: 1.5em; /* Space between logo and title */
+            display: flex; /* To center the logo image inside the box */
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Style for the logo text inside its box */
+        header .logo-box h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em; /* Tamaño ajustado para que sea más grande */
+            margin: 0; /* Remove default margin from h1 inside the box */
+            letter-spacing: 1.5px;
+            text-shadow: none; /* Remove shadow as it's on a light background */
+            color: #ADD8E6; /* Color celeste claro */
+        }
+
+        header p {
+            font-size: 1.3em; /* Slightly larger font size */
+            margin-top: 0.5em;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1em 0; /* Increased padding */
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25); /* More pronounced shadow */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.9em 1.8em; /* Increased padding */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase; /* Uppercase text for tabs */
+            letter-spacing: 1px;
+        }
+        nav a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px); /* Subtle lift effect */
+            border-radius: 6px;
+        }
+
+        /* --- Main Container --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 4em 0; /* Increased padding */
+        }
+
+        /* --- General Sections --- */
+        .section {
+            background-color: white;
+            padding: 3.5em; /* Increased padding */
+            margin-bottom: 3.5em; /* Increased margin */
+            border-radius: 15px; /* More rounded borders */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Softer, extended shadow */
+            text-align: center;
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2em; /* Slightly larger font size */
+            color: var(--primary-color);
+            margin-bottom: 1.2em;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase; /* Uppercase titles */
+        }
+        .section h2::after {
+            content: '';
+            position: absolute;
+            width: 70%; /* Slightly shorter */
+            height: 4px; /* Slightly thicker */
+            background-color: var(--secondary-color);
+            bottom: -12px; /* Further down */
+            left: 15%; /* Centered with 70% width */
+            border-radius: 2px;
+        }
+        .section p {
+            font-size: 1.15em; /* Slightly larger */
+            max-width: 850px;
+            margin: 1.8em auto; /* More margin */
+            color: var(--text-dark);
+        }
+
+        /* --- Photo Gallery (Featured Dishes and Atmosphere) --- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger images */
+            gap: 2.5em; /* More space between images */
+            margin-top: 3em;
+        }
+        .gallery-item {
+            background-color: var(--text-light); /* Light background for items */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px); /* More noticeable lift effect */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 280px; /* Slightly taller image height */
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid var(--primary-color); /* Bottom border for separation */
+        }
+        .gallery-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7em; /* Slightly larger titles */
+            color: var(--secondary-color); /* Accent color for titles */
+            margin: 1.2em 0.8em 0.6em;
+            text-align: center;
+        }
+        .gallery-item p {
+            font-size: 1em; /* Slightly larger text */
+            color: #555;
+            padding: 0 1.2em 1.8em; /* More bottom padding */
+            margin: 0;
+            text-align: center;
+        }
+        .full-width-img {
+            width: 100%;
+            max-height: 500px; /* Slightly taller max height */
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            margin-bottom: 2.5em;
+        }
+
+        /* --- Styles for Atmosphere Carousel --- */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px; /* Max width for carousel */
+            margin: 2.5em auto; /* Center and add margin */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 450px; /* Fixed height for carousel images */
+            object-fit: cover; /* Adjust image without distorting */
+            display: block;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 1.5s ease-in-out; /* Smooth transition between images */
+        }
+
+        .carousel-image.active {
+            opacity: 1; /* Active image visible */
+        }
+
+        /* --- Menu (Dropdown) --- */
+        .accordion-menu {
+            margin-top: 3em;
+            text-align: left;
+        }
+        .accordion-item {
+            background-color: var(--text-light); /* Light background for items */
+            border-radius: 10px; /* More rounded borders */
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08); /* More subtle shadow */
+            margin-bottom: 1.2em; /* More space between items */
+            overflow: hidden;
+        }
+        .accordion-header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1.5em 2.5em; /* Increased padding */
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-size: 2em; /* Larger titles */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease, border-radius 0.3s ease;
+            border-radius: 10px; /* Initial rounded borders */
+        }
+        .accordion-header:hover {
+            background-color: var(--secondary-color);
+        }
+        .accordion-header.active {
+            border-bottom-left-radius: 0; /* Remove bottom rounding when active */
+            border-bottom-right-radius: 0;
+        }
+        .accordion-header i {
+            transition: transform 0.3s ease;
+            font-size: 0.8em; /* Icon size */
+        }
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            padding: 0 2.5em; /* Initial padding */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-out, padding 0.7s ease-out;
+            background-color: white; /* Content background */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: 1px solid var(--border-color); /* Subtle border for separation */
+            border-top: none; /* No top border */
+        }
+        .accordion-content.show {
+            max-height: 1500px; /* Greater max height for more content */
+            padding: 2em 2.5em; /* Padding when shown */
+            transition: max-height 0.7s ease-in, padding 0.7s ease-in;
+        }
+
+        /* New styles for the dish gallery items within the accordion */
+        .dish-gallery-item {
+            display: flex;
+            flex-direction: column; /* Stack image and text vertically by default */
+            align-items: center; /* Center content horizontally */
+            text-align: center;
+            padding: 1.5em 1em;
+            border-bottom: 1px dotted #e5e5e5;
+            margin-bottom: 1em;
+        }
+
+        .dish-gallery-item:last-child {
+            border-bottom: none;
+        }
+
+        .dish-gallery-item img {
+            max-width: 100%; /* Make image responsive */
+            height: 200px; /* Fixed height for consistency, adjust as needed */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .dish-gallery-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        .dish-gallery-item p {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media (min-width: 769px) {
+            .dish-gallery-item {
+                flex-direction: row; /* Side-by-side on larger screens */
+                text-align: left;
+                gap: 1.5em;
+            }
+            .dish-gallery-item img {
+                flex-shrink: 0; /* Prevent image from shrinking */
+                width: 250px; /* Specific width on larger screens */
+                height: 180px; /* Specific height on larger screens */
+                margin-bottom: 0;
+            }
+            .dish-gallery-item h4 {
+                text-align: left;
+            }
+        }
+
+        .menu-category h4 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.4em; /* Larger */
+            color: var(--primary-color);
+            margin-top: 1.8em;
+            margin-bottom: 1em;
+            text-align: center;
+            border-bottom: 1px dashed var(--border-color); /* More subtle border */
+            padding-bottom: 0.5em;
+        }
+        .menu-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0.8em 0; /* More padding */
+            border-bottom: 1px dotted #e5e5e5; /* More discreet border */
+            align-items: baseline;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item span:first-child {
+            font-weight: 600;
+            color: var(--text-dark);
+            flex-basis: 70%;
+            padding-right: 1.5em;
+            font-size: 1.05em; /* Slightly larger */
+        }
+        .menu-item span:last-child {
+            font-weight: 700;
+            color: var(--secondary-color); /* Accent color for prices */
+            white-space: nowrap;
+            flex-basis: 25%;
+            text-align: right;
+            font-size: 1.05em; /* Slightly larger */
+        }
+        .menu-item p {
+            font-size: 0.95em; /* Slightly larger */
+            color: #666;
+            margin-top: 0.3em;
+            line-height: 1.5;
+            width: 100%;
+            margin-left: 0;
+            padding-bottom: 0.5em; /* A little padding to separate descriptions */
+        }
+        .menu-note {
+            font-style: italic;
+            color: #777; /* Softer color */
+            margin-top: 2.5em;
+            font-size: 0.95em;
+            text-align: center;
+        }
+
+        /* --- Contact and Map --- */
+        .contact-info {
+            font-size: 1.15em; /* Slightly larger */
+            margin-top: 2.5em; /* More margin */
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack items vertically by default */
+            align-items: center; /* Center items horizontally */
+            gap: 1em; /* Space between contact lines */
+            padding: 1.5em; /* Add some padding around the contact info */
+            background-color: var(--bg-light); /* Light background for the info box */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Subtle shadow */
+        }
+
+        .contact-info .info-line {
+            display: flex;
+            align-items: center;
+            gap: 0.8em; /* Space between icon and text */
+            font-size: 1.2em; /* Slightly larger for readability */
+            color: var(--text-dark);
+            text-align: left; /* Align text within its line */
+            width: 100%; /* Take full width of parent */
+            max-width: 400px; /* Limit width for aesthetics */
+            justify-content: center; /* Center content of each line */
+        }
+
+        .contact-info .info-line i {
+            color: var(--primary-color); /* Icon color */
+            font-size: 1.5em; /* Larger icons */
+        }
+
+        .contact-info .info-line a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600; /* Bold links */
+        }
+        .contact-info .info-line a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .contact-info .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5em 0 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .contact-info .hours-list li {
+            margin-bottom: 0.3em;
+            color: #555;
+        }
+
+        .map-container {
+            margin-top: 3em; /* More margin */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 450px; /* Slightly taller map */
+            border: 0;
+            display: block;
+        }
+
+        /* --- Social Media --- */
+        .social-box { /* New style for the social media box */
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2em;
+            margin-top: 2em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column; /* Stack links inside the box */
+            align-items: center; /* Horizontally center elements */
+            gap: 1em; /* Space between links */
+        }
+
+        .social-links {
+            margin-top: 1em; /* Adjust top margin since it's inside social-box */
+            display: flex; /* Use flexbox to center and space */
+            flex-direction: column; /* Stack links so each occupies its own line */
+            align-items: center; /* Horizontally center */
+            gap: 1em; /* Space between social media elements */
+            width: 100%; /* Ensure flexbox takes full available width in social-box */
+        }
+        .social-links a {
+            display: flex; /* To align icon and text */
+            align-items: center;
+            justify-content: center; /* Center content of each link */
+            width: 80%; /* Width of links inside social-box */
+            max-width: 300px; /* Limit max width */
+            margin: 0; /* Remove side margin if inside social-box */
+            padding: 0.8em 1em; /* Padding to make links more "button-like" */
+            border-radius: 8px;
+            background-color: var(--bg-light); /* Soft background for each link */
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease, transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+            font-weight: 600;
+        }
+        .social-links a:hover {
+            color: var(--text-light); /* White text on hover */
+            background-color: var(--secondary-color); /* Accent background on hover */
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        .social-links a i {
+            font-size: 2.2em; /* Slightly smaller icons to fit better */
+            margin-right: 0.8em; /* Space between icon and text */
+            color: inherit; /* Inherit parent color to change on hover */
+        }
+        .social-links a:hover i {
+            color: var(--text-light); /* White icon color on hover */
+        }
+        .social-links a span {
+            font-size: 1.1em; /* Larger social network name text */
+            color: var(--text-dark); /* Color of the name text */
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover span {
+             color: var(--text-light); /* White text color on hover */
+        }
+
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2.5em 0; /* More padding */
+            margin-top: 3.5em; /* More margin */
+            font-size: 1em; /* Slightly larger text */
+        }
+        footer p {
+            margin: 0.6em 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* --- Media Queries for Responsive Design --- */
+        @media (max-width: 768px) {
+            header {
+                padding-top: 1.5em; /* Adjust top padding on mobile */
+                padding-bottom: 1.5em; /* Adjust bottom padding on mobile */
+            }
+            .logo-box {
+                padding: 1em 1.5em; /* Smaller padding for logo on mobile */
+                margin-bottom: 1em;
+            }
+            header .logo-box h1 {
+                font-size: 2.8em; /* Ajustado para pantallas medianas */
+            }
+            header h1 { /* No longer needed after moving h1 inside logo-box */
+                font-size: 2.8em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            nav a {
+                padding: 0.8em 1em;
+                font-size: 0.85em;
+            }
+            .container {
+                width: 95%;
+                padding: 2.5em 0;
+            }
+            .section {
+                padding: 2.5em;
+            }
+            .section h2 {
+                font-size: 2.5em;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5em;
+            }
+            .gallery-item img {
+                height: 220px;
+            }
+            .carousel-image {
+                height: 350px; /* Adjust for mobile */
+            }
+            .accordion-header {
+                font-size: 1.5em;
+                padding: 1em 1.5em;
+            }
+            .accordion-content.show {
+                padding: 1.5em 1.5em;
+            }
+            .social-links a {
+                width: 90%; /* Adjust for small screens */
+            }
+            .social-links a i {
+                font-size: 2em;
+            }
+            .social-links a span {
+                font-size: 1.1em;
+            }
+            .map-container iframe {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding-top: 1em;
+                padding-bottom: 1em;
+            }
+            .logo-box {
+                padding: 0.8em 1.2em;
+                margin-bottom: 0.8em;
+            }
+            header .logo-box h1 {
+                font-size: 2em; /* Ajustado para pantallas pequeñas */
+                letter-spacing: 1px;
+            }
+            header h1 { /* No longer needed after moving h1 inside logo-box */
+                font-size: 2.2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            nav {
+                flex-direction: column; /* Stack navigation links */
+            }
+            nav a {
+                flex-basis: 100%;
+                margin: 0.2em 0;
+                padding: 0.6em;
+                font-size: 0.8em;
+            }
+            .section {
+                padding: 1.8em;
+            }
+            .section h2 {
+                font-size: 2em;
+            }
+            .gallery-item img {
+                height: 180px;
+            }
+            .carousel-image {
+                height: 250px; /* Adjust for mobile */
+            }
+            .accordion-header {
+                font-size: 1.3em;
+                padding: 0.8em 1.2em;
+            }
+            .accordion-content.show {
+                padding: 1.2em 1.2em;
+            }
+            .social-box {
+                padding: 1.5em;
+            }
+            .social-links a {
+                width: 100%; /* Take full available width */
+                flex-direction: column; /* Stack icon and text */
+                margin: 0.8em 0; /* Remove side margin */
+            }
+            .social-links a i {
+                margin-right: 0;
+                margin-bottom: 0.2em;
+            }
+            .social-links a span {
+                font-size: 0.9em;
+            }
+            .map-container iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo-box">
+        <h1>Los Troncos Resto Bar</h1>
+    </div>
+    <p>¡Donde cada bocado es una experiencia gourmet!</p>
+</header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#galeria-ambiente">Nuestro Ambiente</a>
+        <a href="#platos-destacados">Nuestras Delicias</a>
+        <a href="#carta-completa">Carta Completa</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <section id="inicio" class="section">
+            <h2>Bienvenidos a Los Troncos Resto Bar</h2>
+            <p>Ubicados en el corazón de Puerto Rico, Misiones, Los Troncos Resto Bar te invita a un viaje culinario donde la calidad y la pasión por la gastronomía se fusionan en un ambiente cálido y sofisticado. Cada plato es una obra de arte, preparada con ingredientes frescos y el toque único de nuestros chefs.</p>
+            <p>Disfruta de momentos memorables, desde almuerzos ejecutivos hasta cenas románticas, acompañados de nuestra selecta carta de bebidas. En Los Troncos, tu satisfacción es nuestra inspiración.</p>
+        </section>
+
+        <section id="galeria-ambiente" class="section">
+            <h2>Nuestro Ambiente</h2>
+            <p>Un espacio diseñado para tu confort y disfrute, ideal para cualquier ocasión.</p>
+            <div class="carousel-container">
+                <!-- Se utiliza la primera imagen del carrusel como base -->
+                <img id="carousel-img" src="IMG-20250601-WA0014.jpg" alt="Exterior de Los Troncos Resto Bar de noche" class="carousel-image active">
+            </div>
+            <p>Te invitamos a sumergirte en la atmósfera única de Los Troncos. Nuestro diseño interior combina lo rústico con lo moderno, creando un lugar perfecto para relajarse y compartir.</p>
+        </section>
+
+        <section id="platos-destacados" class="section">
+            <h2>Nuestras Delicias Destacadas</h2>
+            <p>Descubre una selección de nuestros platos más populares y visualmente atractivos, una invitación a saborear la calidad.</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="IMG-20250606-WA0006.jpg" alt="Pizza Palo Rosa">
+                    <h3>Pizza Palo Rosa</h3>
+                    <p>Nuestra pizza insignia, con una combinación única de ingredientes frescos, aceitunas, tomates cherry y un toque de pesto.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250601-WA0050.jpg" alt="Medallones de Lomo con Salsa de Champiñones y Puré mixto">
+                    <h3>Lomo al Champiñón</h3>
+                    <p>Tiernos medallones de lomo en una rica salsa de champiñones, cebollita y crema, servidos con puré de calabaza.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250606-WA0011.jpg" alt="Milanesa Napolitana con Papas Fritas">
+                    <h3>Milanesa Napolitana</h3>
+                    <p>Clásica milanesa de ternera cubierta con salsa de tomate, jamón, queso gratinado y acompañada de papas fritas.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250606-WA0009.jpg" alt="Picada Variada Los Troncos con Empanadas, Papas y Carnes">
+                    <h3>Picada Los Troncos 2 personas</h3>
+                    <p>Una selección generosa de empanadas, huevos rellenos, jamón, queso, papas y mandiocas fritas, ideal para compartir.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250606-WA0012.jpg" alt="Sándwich de Jamón y Huevo con pan rústico">
+                    <h3>Sándwich Loro Negro</h3>
+                    <p>Un delicioso sándwich con jamón, lechuga, tomate y un huevo frito, en un pan artesanal tostado.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250601-WA0030.jpg" alt="Pizza Araticú">
+                    <h3>Pizza Araticú</h3>
+                    <p>Nuestra pizza de cebolla, simple y deliciosa, con abundante queso mozzarella y cebolla fresca.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250601-WA0063.jpg" alt="Bife de chorizo">
+                    <h3>Bife de chorizo</h3>
+                    <p>Opcional Bife de chorizo con manteca especiada y papas aplastadas.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250601-WA0041.jpg" alt="Milanesa los troncos">
+                    <h3>Milanesa los troncos</h3>
+                    <p> Carne de ternera, queso mozzarella, cheddar, panceta y huevo frito. c/guarnición </p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250601-WA0021.jpg" alt="Milanesa a caballo">
+                    <h3>Milanesa a caballo</h3>
+                    <p> Carne de ternera con huevos fritos. c/guarnición </p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250601-WA0026.jpg" alt="Sandwich IBIRA">
+                    <h3>Sandwich Ibirá</h3>
+                    <p> Pan árabe, carnedesmechada al vino tinto, cebolla y morrones salteados, salsa de ajo y especias. </p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250601-WA0035.jpg" alt="HamburPizza">
+                    <h3>HamburPizza</h3>
+                    <p>Salsa de tomate, Queso mozzarella, medallon de carne, tomate, huevo frito. </p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250605-WA0014.jpg" alt="Pizza Kurupi">
+                    <h3>Pizza Kurupi</h3>
+                    <p>salsa de tomate, Queso mozzarella, carne de ternera picada a cuchillo y cebolla caramelizada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="carta-completa" class="section">
+            <h2>Nuestra Carta Completa</h2>
+            <p>Explora nuestra variada propuesta gastronómica, pensada para satisfacer todos los paladares. Haz clic en cada categoría para ver los platos.</p>
+
+            <div class="accordion-menu">
+                <!-- Platos Elaborados -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Platos Elaborados <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Milanesa de ternera</span><span>$ 11.000</span></div>
+                        <div class="menu-item"><span>Milanesa a caballo</span><span>$ 11.500</span><p>Carne de ternera, huevo frito c/guarnición.</p></div>
+                        <div class="menu-item"><span>Milanesa napolitana</span><span>$ 12.000</span><p>Carne de ternera, salsa de tomate, jamón y queso c/guarnición.</p></div>
+                        <div class="menu-item"><span>Milanesa Los Troncos</span><span>$ 12.500</span><p>Carne de ternera, queso mozzarella, cheddar, panceta y huevo frito.</p></div>
+                        <div class="menu-item"><span>Milanesa a la suiza</span><span>$ 12.000</span><p>Carne de ternera, salsa blanca y queso gratinado, c/guarnición.</p></div>
+                        <div class="menu-item"><span>Lomo al champiñón</span><span>$ 14.000</span><p>Medallón de lomo, champiñones, cebollita, crema y vino blanco. C/guarnicion</p></div>
+                        <div class="menu-item"><span>Lomo a la mostaza</span><span>$ 14.000</span><p>Medallón de lomo, crema, mostaza y pimienta. c/guarnicion.</p></div>
+                        <div class="menu-item"><span>Lomo a la pimienta</span><span>$ 13.000</span><p>Medallón de lomo, crema y pimienta negra c/guarnicion.</p></div>
+                        <div class="menu-item"><span>Lomo a la plancha</span><span>$ 12.000</span><p>Medallón de lomo a la plancha c/guarnicion.</p></div>
+                        <div class="menu-item"><span>Lomo a la suiza</span><span>$ 14.000</span><p>Medallón de lomo, salsa blanca, crema y queso c/guarnicion.</p></div>
+                        <div class="menu-item"><span>Niño envuelto</span><span>$ 13.000</span><p>Nalga, panceta ahumada, ajo, perejil, mostaza y crema. c/guarnición.</p></div>
+                        <div class="menu-item"><span>Sorrentinos</span><span>$ 12.000</span><p>Jamón y queso.</p></div>
+                        <div class="menu-item"><span>Canelón de carne</span><span>$ 12.000</span></div>
+                        <div class="menu-item"><span>Canelón de verdura</span><span>$ 12.000</span></div>
+                        <div class="menu-item"><span>Canelón de choclo</span><span>$ 12.000</span></div>
+                        <div class="menu-item"><span>Tallarines</span><span>$ 9.000</span><p>Cortados a cuchillo.</p></div>
+                        <div class="menu-item"><span>Pastel de papa</span><span>$ 12.000</span></div>
+                        <div class="menu-item"><span>Ñoquis de papa</span><span>$ 12.000</span></div>
+                        <div class="menu-item"><span>Empanada gallega</span><span>$ 8.000</span><p>Masa sablee, rellena de pollo desmenuzado, cebolla, morrón caramelizados y queso.</p></div>
+                    </div>
+                </div>
+
+                <!-- Pescados -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Pescados <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Milanesa de merluza</span><span>$ 10.000</span><p>c/guarnición.</p></div>
+                        <div class="menu-item"><span>Milanesa de merluza napolitana</span><span>$ 11.000</span><p>Salsa de tomate y queso mozzarella.</p></div>
+                        <div class="menu-item"><span>Milanesa de merluza al roquefort</span><span>$ 12.000</span><p>Salsa de tomate, queso mozzarella y roquefort.</p></div>
+                    </div>
+                </div>
+
+                <!-- Sandwiches -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Sándwiches <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Sándwich Desmechado Premium</span><span>$ 8.500</span><p>Carne desmechada tierna, cebolla caramelizada, pimientos asados y hojas frescas en pan artesanal.</p></div>
+                        <!-- Add more sandwiches here if you have them -->
+                    </div>
+                </div>
+
+                <!-- Sides -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Guarniciones <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Papas fritas</span><span>$ 6.000</span></div>
+                        <div class="menu-item"><span>Papas fritas gratinadas</span><span>$ 8.000</span></div>
+                        <div class="menu-item"><span>Papas fritas Los Troncos</span><span>$ 11.500</span><p>Cheddar, bacon y cebollita de verdeo.</p></div>
+                        <div class="menu-item"><span>Mandioca frita</span><span>$ 6.000</span></div>
+                        <div class="menu-item"><span>Puré de papa</span><span>$ 5.000</span></div>
+                        <div class="menu-item"><span>Puré mixto</span><span>$ 5.000</span><p>Zapallo, zanahoria y huevo.</p></div>
+                        <div class="menu-item"><span>Ensalada mixta</span><span>$ 4.000</span><p>Lechuga, tomate, zanahoria y huevo duro.</p></div>
+                        <div class="menu-item"><span>Ensalada Cesar</span><span>$ 8.000</span><p>Mix de verdes, pechuga de pollo, queso parmesano, croutons y salsa Worcestershire.</p></div>
+                        <div class="menu-item"><span>Rabas</span><span>$ 9.000</span></div>
+                    </div>
+                </div>
+
+                <!-- Picadas -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Picadas <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Para 3 personas</span><span>$ 18.000</span><p>Milanesa, huevo relleno, empanaditas, jamón, queso, papas y mandiocas fritas, pancitos y salsa.</p></div>
+                        <div class="menu-item"><span>Para 5 personas</span><span>$ 28.000</span><p>Milanesa, huevo relleno, empanaditas, jamón, queso tybo y roquefort, papas y mandiocas fritas, pancitos y salsa.</p></div>
+                    </div>
+                </div>
+
+                <!-- Pizzas -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Pizzas <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Timbó</span><span>$ 10.000</span><p>Queso mozzarella, salsa de tomates, aceitunas y orégano.</p></div>
+                        <div class="menu-item"><span>Palo Rosa</span><span>$ 12.000</span><p>Queso muzarella, jamón, salsa de tomates, tomates cherry, oliva, albahaca, aceitunas.</p></div>
+                        <div class="menu-item"><span>Palmito</span><span>$ 12.000</span><p>Queso muzarella, tomate, palmitos y huevo duro.</p></div>
+                        <div class="menu-item"><span>Caña Fístola</span><span>$ 15.000</span><p>Queso muzarella, salsa de tomates, queso roquefort y nueces.</p></div>
+                        <div class="menu-item"><span>Anchico</span><span>$ 15.000</span><p>Queso muzarella, cebolla caramelizada, rúcula y jamón crudo.</p></div>
+                        <div class="menu-item"><span>4 Quesos</span><span>$ 15.000</span><p>Salsa de tomates, queso muzarella, roquefort, provolone, y sardo</p></div>
+                        <div class="menu-item"><span>Petiribí</span><span>$ 12.000</span><p>Salsa de tomate, queso mozzarella, calabresa y morrones asados.</p></div>
+                        <div class="menu-item"><span>Mora Blanca</span><span>$ 13.000</span><p>Queso mozzarella, cebolla y oliva.</p></div>
+                        <div class="menu-item"><span>Incienso</span><span>$ 12.000</span><p>Salsa de tomate, mozzarella, huevo duro, choclo y aceitunas</p></div>
+                        <div class="menu-item"><span>Pindó</span><span>$ 14.000</span><p>Salsa de tomate, bondiola, Queso mozzarella, rodajas de tomate, aceitunas y aceite de ajo.</p></div>
+                        <div class="menu-item"><span>Los Troncos</span><span>$ 15.000</span><p>Salsa de tomate, queso mozzarella, queso cheddar y panceta.</p></div>
+                        <div class="menu-item"><span>Ananá</span><span>$ 15.000</span><p>Salsa de tomate, queso mozzarella, jamón crudo, ananá y cerezas.</p></div>
+                        <div class="menu-item"><span>Kurupí</span><span>$ 15.000</span><p>Salsa de tomate, Queso mozzarella, carne de ternera picada a cuchillo y cebolla caramelizada.</p></div>
+                        <div class="menu-item"><span>Hambur Pizza</span><span>$ 15.000</span><p>Salsa de tomate, Queso mozzarella, medallon de carne, tomate, huevo frito. </p></div>
+                        <div class="menu-item"><span>Mora Morada</span><span>$ 13.000</span><p>Queso mozzarella, cebolla morada y oliva.</p></div>
+                        <div class="menu-item"><span>Araticú</span><span>$ 17.000</span><p>Queso mozzarella, queso provolone, jamón, morrones asados, cubierta de cebolla, oliva y orégano.</p></div>
+                        <div class="menu-item"><span>Champiñones</span><span>$ 15.000</span><p>Salsa de tomate, queso mozzarella, champiñones, oliva y ajo.</p></div>
+                        <div class="menu-item"><span>Dulce Los Troncos</span><span>$ 14.000</span><p>Chocolate, banana, merengue y dulce de leche.</p></div>
+                    </div>
+                </div>
+
+                <!-- Empanadas -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Empanadas <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Jamón y queso</span><span>$ 1.100</span></div>
+                        <div class="menu-item"><span>Carne</span><span>$ 1.100</span></div>
+                        <div class="menu-item"><span>Cebolla y queso</span><span>$ 1.100</span></div>
+                        <div class="menu-item"><span>Pollo</span><span>$ 1.100</span></div>
+                        <div class="menu-item"><span>Verdura</span><span>$ 1.100</span></div>
+                        <div class="menu-item"><span>Humita</span><span>$ 1.100</span></div>
+                        <div class="menu-item"><span>Caprese</span><span>$ 1.100</span><p>Tomate, mozzarella y albahaca.</p></div>
+                        <div class="menu-item"><span>Árabe</span><span>$ 1.100</span><p>Molida especial, cebolla, morrón y jugo de limón.</p></div>
+                        <div class="menu-item"><span>Carne cortada a cuchillo</span><span>$ 1.300</span><p>Nalga, panceta, cebolla y morrón.</p></div>
+                    </div>
+                </div>
+
+                <!-- Postres -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Postres <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Flan casero</span><span>$ 3.000</span><p>Con dulce de leche o crema.</p></div>
+                        <div class="menu-item"><span>Bombón helado</span><span>$ 3.000</span></div>
+                        <div class="menu-item"><span>Panqueque con dulce de leche</span><span>$ 3.000</span></div>
+                        <div class="menu-item"><span>Crumble de manzana y helado</span><span>$ 3.000</span></div>
+                    </div>
+                </div>
+
+                <!-- Bebidas sin Alcohol -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Bebidas sin Alcohol <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Coca Cola 1,5 LT</span><span>$ 5.000</span></div>
+                        <div class="menu-item"><span>Coca Cola 1 LT</span><span>$ 4.500</span></div>
+                        <div class="menu-item"><span>Coca Cola 500ML</span><span>$ 3.000</span></div>
+                        <div class="menu-item"><span>Sprite 1,5 LT</span><span>$ 5.000</span></div>
+                        <div class="menu-item"><span>Sprite 1 LT</span><span>$ 4.500</span></div>
+                        <div class="menu-item"><span>Sprite 500ML</span><span>$ 3.000</span></div>
+                        <div class="menu-item"><span>Fanta 1,5 LT</span><span>$ 5.000</span></div>
+                        <div class="menu-item"><span>Fanta 1 LT</span><span>$ 4.500</span></div>
+                        <div class="menu-item"><span>Fanta 500ML</span><span>$ 3.000</span></div>
+                        <div class="menu-item"><span>Levite 1,5 LT</span><span>$ 3.500</span></div>
+                        <div class="menu-item"><span>Levite 500ML</span><span>$ 2.000</span></div>
+                        <div class="menu-item"><span>Agua 1,5 LT</span><span>$ 3.500</span></div>
+                        <div class="menu-item"><span>Agua 500ML</span><span>$ 2.000</span></div>
+                        <h4>Jugos Naturales</h4>
+                        <div class="menu-item"><span>Limonada</span><span>$ 6.000</span></div>
+                        <div class="menu-item"><span>Jengibre Menta & Limón</span><span>$ 6.000</span></div>
+                    </div>
+                </div>
+
+                <!-- Cervezas -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Cervezas <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Heineken</span><span>$ 7.000</span></div>
+                        <div class="menu-item"><span>Corona 710</span><span>$ 7.000</span></div>
+                        <div class="menu-item"><span>Corona 330</span><span>$ 4.500</span></div>
+                        <div class="menu-item"><span>Patagonia</span><span>$ 7.000</span></div>
+                        <div class="menu-item"><span>Brahma</span><span>$ 6.000</span></div>
+                        <div class="menu-item"><span>Quilmes</span><span>$ 6.000</span></div>
+                        <div class="menu-item"><span>Quilmes Stout</span><span>$ 6.000</span></div>
+                        <h4>Cervezas Artesanales HOLY</h4>
+                        <div class="menu-item"><span>Amber Lager</span><span>$ 4.000</span></div>
+                        <div class="menu-item"><span>Yatei Honey</span><span>$ 4.000</span></div>
+                        <div class="menu-item"><span>IPA Argenta</span><span>$ 4.000</span></div>
+                        <div class="menu-item"><span>Golden Ale</span><span>$ 4.000</span></div>
+                        <div class="menu-item"><span>Nitro Stout</span><span>$ 4.000</span></div>
+                    </div>
+                </div>
+
+                <!-- Vinos -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Vinos <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>DV Catena Cabernet-Malbec</span><span>$ 16.000</span></div>
+                        <div class="menu-item"><span>Malbec-Malbec</span><span>$ 22.000</span></div>
+                        <div class="menu-item"><span>Angélica Zapata Malbec alta</span><span>$ 30.000</span></div>
+                        <div class="menu-item"><span>Bramare Malbec</span><span>$ 40.000</span></div>
+                        <div class="menu-item"><span>Mosquita Muerta Blend</span><span>$ 19.000</span></div>
+                        <div class="menu-item"><span>El Enemigo Malbec</span><span>$ 30.000</span></div>
+                        <div class="menu-item"><span>Gran Enemigo Gualtallary</span><span>$ 68.000</span></div>
+                        <div class="menu-item"><span>Latitud 33 Malbec</span><span>$ 9.000</span></div>
+                        <div class="menu-item"><span>Santa Julia Malbec</span><span>$ 9.000</span></div>
+                        <div class="menu-item"><span>Santa Julia dulce tinto natural</span><span>$ 9.000</span></div>
+                        <div class="menu-item"><span>Santa Julia blanco chenin dulce natural</span><span>$ 9.000</span></div>
+                        <div class="menu-item"><span>Trumpeter Malbec</span><span>$ 11.000</span></div>
+                    </div>
+                </div>
+
+                <!-- Tragos -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Tragos <i class="fas fa-chevron-down"></i></h3>
+                    <div class="accordion-content">
+                        <div class="menu-item"><span>Aperol</span><span>$ 4.500</span><p>Aperol + champagne/jugo de naranja</p></div>
+                        <div class="menu-item"><span>Fernet</span><span>$ 4.500</span><p>Fernet + coca cola</p></div>
+                        <div class="menu-item"><span>Gancia</span><span>$ 4.500</span><p>Gancia + Sprite</p></div>
+                        <div class="menu-item"><span>Cuba Libre</span><span>$ 5.000</span><p>Ron bacardi + Coca cola + limón</p></div>
+                        <div class="menu-item"><span>Gin Tonic</span><span>$ 4.500</span><p>Gin tonic + agua tónica</p></div>
+                        <div class="menu-item"><span>Campari</span><span>$ 4.500</span><p>Campari + jugo de naranja/agua tónica</p></div>
+                        <div class="menu-item"><span>Vermut</span><span>$ 4.500</span><p>Cinzano rosso + soda</p></div>
+                        <div class="menu-item"><span>Caipiriña</span><span>$ 4.500</span><p>Jugo de limón + velho barreiro</p></div>
+                        <div class="menu-item"><span>Daikiri</span><span>$ 4.500</span><p>Fruta de estación + vodka + leche condensada</p></div>
+                    </div>
+                </div>
+            </div>
+            <p class="menu-note">*Prices are expressed in Argentine pesos and are indicative. They may vary without prior notice. Consult staff for availability.</p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Encuéntranos</h2>
+            <p>Estamos ansiosos por recibirte en Los Troncos Resto Bar.</p>
+            <div class="contact-info">
+                <div class="info-line">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Av. San Martín 2758, N3334 Puerto Rico, Misiones, Argentina</span>
+                </div>
+                <div class="info-line">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+543743611895">+54 3743 611895</a>
+                </div>
+                <div class="info-line">
+                    <i class="fas fa-clock"></i>
+                    <span>Horarios:</span>
+                </div>
+                <ul class="hours-list">
+                    <li>Jueves a Domingo: 19:00 - 00:30 hs</li>
+                </ul>
+                <p>¡Te esperamos para brindarte una experiencia inolvidable!</p>
+            </div>
+            <div class="map-container">
+                <h3>¿Cómo llegar?</h3>
+                <!-- Google Maps Embed Code for Av. San Martín 2758, Puerto Rico, Misiones -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.009087532393!2d-56.86241312389953!3d-26.65709147677469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94553b4998797f7b%3A0xf63934d43615f53c!2sLos%20Troncos%20Resto%20Bar!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="social-box"> <!-- New container for social media box -->
+                <p>Síguenos y contáctanos:</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/lostroncos_restobar" target="_blank" title="Instagram de Los Troncos">
+                        <i class="fab fa-instagram"></i> <span>@lostroncos_restobar</span>
+                    </a>
+                    <a href="https://wa.me/543743611895" target="_blank" title="WhatsApp de Los Troncos">
+                        <i class="fab fa-whatsapp"></i> <span>WhatsApp Los Troncos</span>
+                    </a>
+                    <a href="https://www.facebook.com/lostroncos.restobar.2025?locale=es_LA" target="_blank" title="Facebook de Los Troncos">
+                        <i class="fab fa-facebook-f"></i> <span>Lostroncos Restobar</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Los Troncos Resto Bar. All rights reserved.</p>
+        <p>Made with passion for good food.</p>
+    </footer>
+
+    <script>
+        // JavaScript for the dropdown menu (accordion)
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const currentItem = this.parentNode; // The complete 'accordion-item'
+                    const currentContent = this.nextElementSibling; // The 'accordion-content'
+
+                    // Close all other open contents
+                    accordionHeaders.forEach(otherHeader => {
+                        const otherContent = otherHeader.nextElementSibling;
+                        if (otherContent !== currentContent && otherContent.classList.contains('show')) {
+                            otherContent.classList.remove('show');
+                            otherHeader.classList.remove('active');
+                        }
+                    });
+
+                    // Open or close the current content
+                    this.classList.toggle('active');
+                    currentContent.classList.toggle('show');
+                });
+            });
+
+            // JavaScript for the atmosphere image carousel
+            const carouselImages = [
+                "IMG-20250601-WA0014.jpg",
+                "IMG-20250606-WA0004.jpg",
+                "IMG-20250606-WA0003.jpg",
+                // Por favor, proporciona el nombre de la nueva imagen para añadirla aquí.
+            ];
+            const carouselAltTexts = [
+                "Exterior de Los Troncos Resto Bar de noche",
+                "Detalle de luces colgantes Edison en Los Troncos",
+                "Decoración de cava de vinos en la pared de Los Troncos",
+                // Por favor, proporciona el texto alternativo para la nueva imagen.
+            ];
+            let currentImageIndex = 0;
+            const carouselImgElement = document.getElementById('carousel-img');
+
+            function changeCarouselImage() {
+                // Remove 'active' class to start fade-out
+                carouselImgElement.classList.remove('active');
+
+                // Wait for a short moment (e.g., 500ms) for the fade-out to begin
+                setTimeout(() => {
+                    currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+                    carouselImgElement.src = carouselImages[currentImageIndex];
+                    carouselImgElement.alt = carouselAltTexts[currentImageIndex];
+
+                    // Add 'active' class to start fade-in
+                    carouselImgElement.classList.add('active');
+                }, 500); // This delay should be less than the CSS transition duration
+            }
+
+            // Start the carousel every 4 seconds
+            setInterval(changeCarouselImage, 4000);
+        });
+    </script>
+</body>
+</html>
