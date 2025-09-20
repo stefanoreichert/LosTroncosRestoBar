@@ -1,0 +1,22 @@
+/* Reset y configuración base */
+html {
+    font-size: 14.4px; /* 90% de 16px */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6; /* Reducido de 1.8 */
+    overflow-x: hidden;
+    transform-origin: top center;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

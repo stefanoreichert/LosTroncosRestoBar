@@ -1,0 +1,125 @@
+/* Layout y Secciones Generales */
+
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 4em 0;
+}
+
+/* Secciones generales */
+.section {
+    background-color: white;
+    padding: 2.8em; /* Reducido de 3.5em */
+    margin-bottom: 2.8em; /* Reducido de 3.5em */
+    border-radius: 12px; /* Reducido de 15px */
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15); /* Reducido de 0 8px 30px */
+    text-align: center;
+}
+
+/* Decoración después de H2 */
+.section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3em;
+    margin-top: 2em;
+}
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+/* Location badge */
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.location-badge i {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+}
+
+/* Quote section */
+.quote-section {
+    background-image: url('../imagenes/IMG-20250920-WA0031.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 4em 2em;
+}
+
+.quote-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(44, 62, 80, 0.8) 0%, 
+        rgba(92, 124, 138, 0.7) 50%, 
+        rgba(168, 100, 67, 0.8) 100%);
+    z-index: 1;
+}
+
+.quote-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    line-height: 1.3;
+}
+
+.quote-author {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}

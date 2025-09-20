@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const carouselImages = [
-    "imagenes/IMG-20250920-WA0023.jpg"
-    ,"imagenes/IMG-20250920-WA0040.jpg"
-    ,"imagenes/IMG-20250920-WA0031.jpg"
-    ,"imagenes/IMG-20250920-WA0032.jpg"
-    ,"imagenes/IMG-20250920-WA0035.jpg"
-    ,"imagenes/IMG-20250920-WA0042.jpg"];
-    
+    "IMAGENES_USADAS/IMG-20250920-WA0023.jpg"
+    ,"IMAGENES_USADAS/IMG-20250920-WA0040.jpg"
+    ,"IMAGENES_USADAS/IMG-20250920-WA0031.jpg"
+    ,"IMAGENES_USADAS/IMG-20250920-WA0032.jpg"
+    ,"IMAGENES_USADAS/IMG-20250920-WA0035.jpg"
+    ,"IMAGENES_USADAS/IMG-20250920-WA0042.jpg"];
+
     const carouselAltTexts = [
         "Ambiente nocturno de Los Troncos Resto Bar",
         "Vista interior del restaurante",

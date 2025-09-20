@@ -1,0 +1,125 @@
+/* Typography - Encabezados H1, H2, H3 */
+
+/* Header principal H1 */
+header .logo-box h1 {
+    font-family: 'Cinzel', serif; /* Fuente gourmet y rústica */
+    font-size: 4.2em; /* Aumentado para mayor presencia */
+    margin: 0;
+    letter-spacing: 3px; /* Más espaciado para elegancia gourmet */
+    color: #2C3E50; /* Color más oscuro y profesional */
+    font-weight: 600; /* Peso medio-bold para elegancia rústica */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3); /* Sombra sutil para profundidad */
+    line-height: 1.1; /* Ajuste de altura de línea */
+    text-transform: uppercase; /* Mayúsculas para mayor elegancia gourmet */
+}
+
+/* Header subtítulo */
+header p {
+    font-size: 1.5em; /* Ligeramente más grande */
+    margin-top: 0.8em;
+    color: rgba(255, 255, 255, 0.95); /* Blanco con leve transparencia */
+    font-weight: 400;
+    letter-spacing: 0.5px; /* Más refinado */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2); /* Sombra sutil */
+}
+
+/* Encabezados H2 de secciones */
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6em; /* Reducido de 3.2em */
+    color: var(--primary-color);
+    margin-bottom: 1em; /* Reducido de 1.2em */
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+/* Decoración después de H2 */
+.section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* H2 del hero about */
+.about-hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    line-height: 1.2;
+}
+
+/* H3 en tarjetas de galería */
+.gallery-item h3 {
+    font-family:'Playfair Display', serif;
+    color: var(--text-dark);
+    font-size: 1.4em;
+    margin: 0.8em 0 0.4em;
+}
+
+/* H3 en about section */
+.about-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* H3 en about values */
+.about-values h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* H2 de servicios */
+.services-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* H1 del logo de servicios */
+.logo-container h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #f8f9fa;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* H3 en service cards */
+.service-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.5px;
+}
+
+/* H3 en CTA de servicios */
+.services-cta h3 {
+    font-family: 'Cinzel', serif;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
