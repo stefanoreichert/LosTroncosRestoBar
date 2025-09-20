@@ -21,31 +21,124 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const carouselImages = [
-    "imagenes/IMG-20250905-WA0005.jpg"
-    ,"imagenes/IMG-20250905-WA0008.jpg"
-    ,"imagenes/IMG-20250905-WA0010.jpg"
-    ,"imagenes/IMG-20250905-WA0006.jpg"
-    ,"imagenes/IMG-20250905-WA0007.jpg"
-    ,"imagenes/IMG-20250905-WA0013.jpg"];
+    "imagenes/IMG-20250920-WA0023.jpg"
+    ,"imagenes/IMG-20250920-WA0040.jpg"
+    ,"imagenes/IMG-20250920-WA0031.jpg"
+    ,"imagenes/IMG-20250920-WA0032.jpg"
+    ,"imagenes/IMG-20250920-WA0035.jpg"
+    ,"imagenes/IMG-20250920-WA0042.jpg"];
+    
     const carouselAltTexts = [
-        "Exterior de Los Troncos Resto Bar de noche",
-        "Detalle de luces colgantes Edison en Los Troncos",
-        "Decoración de cava de vinos en la pared de Los Troncos"
+        "Ambiente nocturno de Los Troncos Resto Bar",
+        "Vista interior del restaurante",
+        "Decoración rústica con toques modernos",
+        "Mesa preparada para una velada especial",
+        "Ambiente cálido para disfrutar en familia",
+        "Detalle de la decoración del local"
     ];
+    
     let currentImageIndex = 0;
     const carouselImgElement = document.getElementById('carousel-img');
+    let carouselInterval;
 
-    function changeCarouselImage() {
+    function updateCarouselImage(index) {
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        
         carouselImgElement.classList.remove('active');
+        indicators.forEach(ind => ind.classList.remove('active'));
+        
         setTimeout(() => {
-            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
-            carouselImgElement.src = carouselImages[currentImageIndex];
+            currentImageIndex = index;
+            carouselImgElement.style.backgroundImage = `url(${carouselImages[currentImageIndex]})`;
             carouselImgElement.alt = carouselAltTexts[currentImageIndex];
             carouselImgElement.classList.add('active');
+            indicators[currentImageIndex].classList.add('active');
         }, 500);
     }
 
-    setInterval(changeCarouselImage, 4000);
+    function changeCarouselImage() {
+        const nextIndex = (currentImageIndex + 1) % carouselImages.length;
+        updateCarouselImage(nextIndex);
+    }
+
+    function startCarouselInterval() {
+        carouselInterval = setInterval(changeCarouselImage, 4000);
+    }
+
+    function stopCarouselInterval() {
+        clearInterval(carouselInterval);
+    }
+
+    // Funciones globales para los controles
+    window.nextImage = function() {
+        stopCarouselInterval();
+        const nextIndex = (currentImageIndex + 1) % carouselImages.length;
+        updateCarouselImage(nextIndex);
+        setTimeout(startCarouselInterval, 2000);
+    };
+
+    window.prevImage = function() {
+        stopCarouselInterval();
+        const prevIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+        updateCarouselImage(prevIndex);
+        setTimeout(startCarouselInterval, 2000);
+    };
+
+    window.goToImage = function(index) {
+        stopCarouselInterval();
+        updateCarouselImage(index);
+        setTimeout(startCarouselInterval, 2000);
+    };
+
+    // Pausar en hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', stopCarouselInterval);
+    carouselContainer.addEventListener('mouseleave', startCarouselInterval);
+
+    startCarouselInterval();
+
+    // Animación de conteo para estadísticas
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current) + (target >= 1000 ? '+' : '+');
+        }, 16);
+    }
+
+    // Observer para activar animación cuando sea visible
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    if (stat.getAttribute('data-target') && !stat.classList.contains('animated')) {
+                        stat.classList.add('animated');
+                        animateCounter(stat);
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    // Observar la sección de estadísticas
+    const aboutStats = document.querySelector('.about-stats-container');
+    if (aboutStats) {
+        observer.observe(aboutStats);
+    }
 });
 </script>
 

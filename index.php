@@ -31,9 +31,16 @@ include 'include/header.php';
                 </div>
             </div>
             <div class="welcome-quote">
-                <i class="fas fa-quote-left"></i>
-                <blockquote>En Los Troncos, tu satisfacción es nuestra inspiración.</blockquote>
-                <i class="fas fa-quote-right"></i>
+                <div class="quote-decoration">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                </div>
+                <blockquote class="professional-quote">
+                    <span class="quote-text">Donde cada plato cuenta una historia y cada momento se convierte en un recuerdo especial</span>
+                    <cite class="quote-author">Los Troncos Resto Bar</cite>
+                </blockquote>
+                <div class="quote-decoration">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                </div>
             </div>
         </div>
     </div>
@@ -43,7 +50,21 @@ include 'include/header.php';
     <h2>Nuestro Ambiente</h2>
     <p>Un espacio diseñado para tu confort y disfrute, ideal para cualquier ocasión.</p>
     <div class="carousel-container">
-        <img id="carousel-img" src="IMG-20250601-WA0014.jpg" alt="Exterior de Los Troncos Resto Bar de noche" class="carousel-image active">
+        <div id="carousel-img" style="background-image: url('imagenes/IMG-20250920-WA0023.jpg');" alt="Ambiente nocturno de Los Troncos Resto Bar" class="carousel-image active"></div>
+        
+        <!-- Controles de navegación -->
+        <button class="carousel-controls carousel-prev" onclick="prevImage()">❮</button>
+        <button class="carousel-controls carousel-next" onclick="nextImage()">❯</button>
+        
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <div class="carousel-indicator active" onclick="goToImage(0)"></div>
+            <div class="carousel-indicator" onclick="goToImage(1)"></div>
+            <div class="carousel-indicator" onclick="goToImage(2)"></div>
+            <div class="carousel-indicator" onclick="goToImage(3)"></div>
+            <div class="carousel-indicator" onclick="goToImage(4)"></div>
+            <div class="carousel-indicator" onclick="goToImage(5)"></div>
+        </div>
     </div>
     <p>Te invitamos a sumergirte en la atmósfera única de Los Troncos. Nuestro diseño interior combina lo rústico con lo moderno, creando un lugar perfecto para relajarse y compartir.</p>
 </section>
@@ -113,73 +134,199 @@ include 'include/header.php';
             <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozarella, con cuatro medallones de carne, tomate y huevo frito .</p>
         </div>
                 <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 22.01.29_07d60744.jpg" alt="Hambur Pizza">
-            <h3>Hambur Pizza</h3>
-            <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozarella, con cuatro medallones de carne, tomate y huevo frito .</p>
+            <img src="imagenes/IMG-20250905-WA0016.jpg" alt="Sandwich Loro negro">
+            <h3>Sandwich Loro negro</h3>
+            <p>Delicioso sándwich con pan artesanal, con una milanesa de carne de la casa, lechuga, tomate, huevo frito, jamón y queso. Con guarnición.</p>
         </div>
                 <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 22.01.29_07d60744.jpg" alt="Hambur Pizza">
-            <h3>Hambur Pizza</h3>
-            <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozarella, con cuatro medallones de carne, tomate y huevo frito .</p>
+            <img src="imagenes/IMG-20250905-WA0023.jpg" alt="Empanadas capresse">
+            <h3>Empanadas Capresse</h3>
+            <p>Deliciosas empanadas rellenas de mozzarella, tomate y albahaca, acompañadas de salsa de pesto.</p>
         </div>
                 <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 22.01.29_07d60744.jpg" alt="Hambur Pizza">
-            <h3>Hambur Pizza</h3>
-            <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozarella, con cuatro medallones de carne, tomate y huevo frito .</p>
+            <img src="imagenes/IMG-20250920-WA0015.jpg" alt="Hamburguesa Tacuarembó">
+            <h3>Hamburguesa Tacuarembó</h3>
+            <p>Hamburguesa con doble medallón de carne, con cebolla caramelizada, queso cheddar y bacon, acompañada de papas fritas.</p>
         </div>
                 <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 22.01.29_07d60744.jpg" alt="Hambur Pizza">
-            <h3>Hambur Pizza</h3>
-            <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozarella, con cuatro medallones de carne, tomate y huevo frito .</p>
+            <img src="imagenes/IMG-20250920-WA0017.jpg" alt="Hamburguesa Cedro Misionero">
+            <h3>Hamburguesa Cedro Misionero</h3>
+            <p>Hamburguesa con medallón de carne jamón, doble queso, panceta, lechuga, tomates cherry caramelizados y huevo frito. Acompañada de guarnición.</p>
         </div>
                 <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 22.01.29_07d60744.jpg" alt="Hambur Pizza">
-            <h3>Hambur Pizza</h3>
-            <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozarella, con cuatro medallones de carne, tomate y huevo frito .</p>
+            <img src="imagenes/IMG-20250517-WA0016.jpg" alt="Patel de papa">
+            <h3>Pastel de papa</h3>
+            <p>Pastel de Papa Casero, Suave puré de papas cremoso, relleno con carne especiada y gratinado al horno, en una combinación cálida y reconfortante de sabor casero con un toque gourmet.</p>
         </div>
                 <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 22.01.29_07d60744.jpg" alt="Hambur Pizza">
-            <h3>Hambur Pizza</h3>
-            <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozarella, con cuatro medallones de carne, tomate y huevo frito .</p>
+            <img src="imagenes/Imagen de WhatsApp 2025-09-20 a las 12.19.15_8cf4c72e.jpg" alt="Empanadas de verduras">
+            <h3>Empanadas de verduras</h3>
+            <p>Deliciosas empanadas de verduras y queso.</p>
         </div>
-
-
-
 </section>
 
+<!-- Nueva sección de servicios -->
+<section id="servicios" class="section services-section">
+    <div class="services-header">
+        <h2>Nuestros Servicios</h2>
+        <p>Experiencias gastronómicas únicas adaptadas a tus necesidades</p>
+    </div>
+    
+    <!-- Logo del restaurante -->
+    <div class="services-logo">
+        <div class="logo-container">
+            <h1>Los Troncos</h1>
+            <p>Resto Bar</p>
+            <div class="logo-decoracion">
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Servicios de Catering</h3>
+            <p>Llevamos la calidad de Los Troncos a tu evento especial. Servicio completo para cumpleaños, reuniones, celebraciones familiares, etc.</p>
+            <div class="service-features">
+                <span>• Menús personalizados</span>
+                <span>• Servicio a domicilio</span>
+                <span>• Personal especializado</span>
+            </div>
+        </div>
+        
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-pizza-slice"></i>
+            </div>
+            <h3>Rodizio de Pizza</h3>
+            <p>Disfruta de una experiencia única con nuestro rodizio de pizzas artesanales. Variedades ilimitadas con ingredientes frescos y masa casera preparada diariamente.</p>
+            <div class="service-features">
+                <span>• Pizzas artesanales ilimitadas</span>
+                <span>• Ingredientes premium</span>
+                <span>• Masa casera fresca</span>
+            </div>
+        </div>
+        
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-hamburger"></i>
+            </div>
+            <h3>Rodizio de Empanadas</h3>
+            <p>Degusta la tradición argentina con nuestro rodizio de empanadas. Variedad de sabores clásicos de la casa, todas horneadas y fritas con recetas familiares auténticas.</p>
+            <div class="service-features">
+                <span>• Empanadas ilimitadas</span>
+                <span>• Sabores tradicionales y gourmet</span>
+                <span>• Recetas familiares</span>
+            </div>
+        </div>
+        
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-bread-slice"></i>
+            </div>
+            <h3>Rodizio de Sandwiches</h3>
+            <p>Experimenta nuestro rodizio de sandwiches. Combinaciones únicas con panes artesanales, carnes premium y ingredientes seleccionados especialmente.</p>
+            <div class="service-features">
+                <span>• Sandwiches gourmet ilimitados</span>
+                <span>• Panes artesanales</span>
+                <span>• Carnes premium</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="services-cta">
+        <h3>¿Interesado en nuestros servicios?</h3>
+        <div class="cta-logo">
+            <img src="imagenes/LOGO_LOS_TRONCOS.jpg" alt="Los Troncos Resto Bar" class="cta-logo-image">
+        </div>
+        <p>Contactanos para más información y reservas</p>
+        <div class="contact-info">
+            <p class="whatsapp-number">
+                <i class="fab fa-whatsapp"></i> 
+                WhatsApp: <strong>+54 3743-311895</strong>
+            </p>
+        </div>
+        <div class="contact-buttons">
+            <a href="https://wa.me/5493755123456?text=Hola! Me interesa información sobre sus servicios de catering y rodizios." class="btn-primary" target="_blank">
+                <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+            </a>
+            <a href="https://www.instagram.com/lostroncos_restobar/" class="btn-secondary" target="_blank">
+                <i class="fab fa-instagram"></i> Seguir en Instagram
+            </a>
+        </div>
+    </div>
+</section>
 
-<section id="Sobre-Nosotros" class="section">
-    <h2>Sobre Nosotros</h2>
+<section id="Sobre-Nosotros" class="section about-section">
+    <div class="about-hero">
+        <div class="about-hero-content">
+            <h2>Nuestra Historia</h2>
+            <p class="about-intro">Más de dos décadas creando experiencias gastronómicas únicas en el corazón de Puerto Rico, Misiones.</p>
+        </div>
+        <div class="about-hero-image">
+            <img src="imagenes/IMG-20250920-WA0031.jpg" alt="Interior de Los Troncos Resto Bar">
+        </div>
+    </div>
+    
     <div class="about-grid">
         <div class="about-content">
             <div class="about-item">
-                <i class="fas fa-heart"></i>
-                <h3>Nuestra Pasión</h3>
-                <p>En Los Troncos Resto Bar, nos apasiona ofrecer una experiencia gastronómica única. Nuestro equipo está dedicado a seleccionar los mejores ingredientes y crear platos que deleiten todos los sentidos.</p>
+                <div class="about-icon-wrapper">
+                    <i class="fas fa-heart"></i>
+                    <div class="icon-pulse"></div>
+                </div>
+                <div class="about-text">
+                    <h3>Nuestra Pasión</h3>
+                    <p>En Los Troncos Resto Bar, nos apasiona ofrecer una experiencia gastronómica única. Nuestro equipo está dedicado a seleccionar los mejores ingredientes y crear platos que deleiten todos los sentidos.</p>
+                    <div class="about-highlight">Ingredientes Premium</div>
+                </div>
             </div>
             <div class="about-item">
-                <i class="fas fa-star"></i>
-                <h3>Experiencia y Calidad</h3>
-                <p>Con más de 20 años de experiencia en el rubro, te garantizamos una experiencia culinaria excepcional. Cada plato es preparado con dedicación y maestría.</p>
+                <div class="about-icon-wrapper">
+                    <i class="fas fa-star"></i>
+                    <div class="icon-pulse"></div>
+                </div>
+                <div class="about-text">
+                    <h3>Experiencia y Calidad</h3>
+                    <p>Con más de 20 años de experiencia en el rubro, te garantizamos una experiencia culinaria excepcional. Cada plato es preparado con dedicación y maestría.</p>
+                    <div class="about-highlight">Tradición Culinaria</div>
+                </div>
             </div>
             <div class="about-item">
-                <i class="fas fa-users"></i>
-                <h3>Atención Personalizada</h3>
-                <p>Desde nuestro ambiente acogedor hasta la atención personalizada, cada detalle está pensado para que disfrutes de una velada inolvidable junto a tus seres queridos.</p>
+                <div class="about-icon-wrapper">
+                    <i class="fas fa-users"></i>
+                    <div class="icon-pulse"></div>
+                </div>
+                <div class="about-text">
+                    <h3>Atención Personalizada</h3>
+                    <p>Desde nuestro ambiente acogedor hasta la atención personalizada, cada detalle está pensado para que disfrutes de una velada inolvidable junto a tus seres queridos.</p>
+                    <div class="about-highlight">Servicio Excepcional</div>
+                </div>
             </div>
         </div>
-        <div class="about-stats">
-            <div class="stat-item">
-                <span class="stat-number">20+</span>
-                <span class="stat-label">Años de Experiencia</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">1000+</span>
-                <span class="stat-label">Clientes Satisfechos</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">50+</span>
-                <span class="stat-label">Platos Especiales</span>
+        
+        <div class="about-values">
+            <h3>Nuestros Valores</h3>
+            <div class="values-grid">
+                <div class="value-item">
+                    <span class="value-emoji">🌟</span>
+                    <span class="value-text">Excelencia</span>
+                </div>
+                <div class="value-item">
+                    <span class="value-emoji">🤝</span>
+                    <span class="value-text">Compromiso</span>
+                </div>
+                <div class="value-item">
+                    <span class="value-emoji">💫</span>
+                    <span class="value-text">Innovación</span>
+                </div>
+                <div class="value-item">
+                    <span class="value-emoji">🏠</span>
+                    <span class="value-text">Calidez</span>
+                </div>
             </div>
         </div>
     </div>
