@@ -2,12 +2,12 @@
 include 'include/header.php';
 ?>
 
-<section id="inicio" class="section welcome-section">
+<section id="inicio" class="section welcome-section" data-parallax="0.3">
     <div class="welcome-content">
         <h2>Bienvenidos</h2>
         <div class="welcome-grid">
             <div class="welcome-text">
-                <div class="location-badge">
+                <div class="location-badge" data-tooltip="Ubicados en Puerto Rico, Misiones">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Puerto Rico, Misiones</span>
                 </div>
@@ -16,15 +16,15 @@ include 'include/header.php';
                     <p>Disfruta de momentos memorables, desde almuerzos ejecutivos hasta cenas románticas, acompañados de nuestra selecta carta de bebidas.</p>
                 </div>
                 <div class="welcome-features">
-                    <div class="feature">
+                    <div class="feature" data-tooltip="Platos elaborados por chefs expertos">
                         <i class="fas fa-utensils"></i>
                         <span>Cocina Gourmet</span>
                     </div>
-                    <div class="feature">
+                    <div class="feature" data-tooltip="Ambiente acogedor y elegante">
                         <i class="fas fa-glass-cheers"></i>
                         <span>Lugar agradable</span>
                     </div>
-                    <div class="feature">
+                    <div class="feature" data-tooltip="Horario: Jueves a Domingo 20:00-00:00">
                         <i class="fas fa-clock"></i>
                         <span>Abierto de jueves a domingo</span>
                     </div>
@@ -49,21 +49,49 @@ include 'include/header.php';
 <section id="galeria-ambiente" class="section">
     <h2>Nuestro Ambiente</h2>
     <p>Un espacio diseñado para tu confort y disfrute, ideal para cualquier ocasión.</p>
-    <div class="carousel-container">
-        <div id="carousel-img" style="background-image: url('imagenes/IMG-20250920-WA0023.jpg');" alt="Ambiente nocturno de Los Troncos Resto Bar" class="carousel-image active"></div>
+    <div class="carousel-container" aria-label="Galería de imágenes del ambiente">
+        <div id="carousel-img" 
+             style="background-image: url('imagenes/IMG-20250920-WA0023.jpg');" 
+             alt="Ambiente nocturno de Los Troncos Resto Bar" 
+             class="carousel-image active"
+             role="img"></div>
         
         <!-- Controles de navegación -->
-        <button class="carousel-controls carousel-prev" onclick="prevImage()">❮</button>
-        <button class="carousel-controls carousel-next" onclick="nextImage()">❯</button>
+        <button class="carousel-controls carousel-prev" 
+                onclick="prevImage()" 
+                aria-label="Imagen anterior"
+                data-tooltip="Anterior">❮</button>
+        <button class="carousel-controls carousel-next" 
+                onclick="nextImage()" 
+                aria-label="Siguiente imagen"
+                data-tooltip="Siguiente">❯</button>
         
         <!-- Indicadores -->
-        <div class="carousel-indicators">
-            <div class="carousel-indicator active" onclick="goToImage(0)"></div>
-            <div class="carousel-indicator" onclick="goToImage(1)"></div>
-            <div class="carousel-indicator" onclick="goToImage(2)"></div>
-            <div class="carousel-indicator" onclick="goToImage(3)"></div>
-            <div class="carousel-indicator" onclick="goToImage(4)"></div>
-            <div class="carousel-indicator" onclick="goToImage(5)"></div>
+        <div class="carousel-indicators" role="navigation" aria-label="Indicadores de imagen">
+            <div class="carousel-indicator active" 
+                 onclick="goToImage(0)" 
+                 aria-label="Ir a imagen 1"
+                 data-tooltip="Imagen 1"></div>
+            <div class="carousel-indicator" 
+                 onclick="goToImage(1)" 
+                 aria-label="Ir a imagen 2"
+                 data-tooltip="Imagen 2"></div>
+            <div class="carousel-indicator" 
+                 onclick="goToImage(2)" 
+                 aria-label="Ir a imagen 3"
+                 data-tooltip="Imagen 3"></div>
+            <div class="carousel-indicator" 
+                 onclick="goToImage(3)" 
+                 aria-label="Ir a imagen 4"
+                 data-tooltip="Imagen 4"></div>
+            <div class="carousel-indicator" 
+                 onclick="goToImage(4)" 
+                 aria-label="Ir a imagen 5"
+                 data-tooltip="Imagen 5"></div>
+            <div class="carousel-indicator" 
+                 onclick="goToImage(5)" 
+                 aria-label="Ir a imagen 6"
+                 data-tooltip="Imagen 6"></div>
         </div>
     </div>
     <p>Te invitamos a sumergirte en la atmósfera única de Los Troncos. Nuestro diseño interior combina lo rústico con lo moderno, creando un lugar perfecto para relajarse y compartir.</p>
@@ -73,96 +101,151 @@ include 'include/header.php';
     <h2>Nuestras Delicias Destacadas</h2>
     <p>Descubre una selección de nuestros platos más populares y visualmente atractivos, una invitación a saborear la calidad.</p>
     <div class="gallery">
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0012.jpg" alt="Pizza Palo Rosa">
+        <div class="gallery-item" data-category="pizza">
+            <img src="imagenes/IMG-20250905-WA0012.jpg" 
+                 alt="Pizza Palo Rosa"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Pizza Palo Rosa</h3>
             <p>Nuestra pizza insignia, con una combinación única de ingredientes frescos, aceitunas, tomates cherry y un toque de pesto.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0014.jpg" alt="Lomo al Champiñón">
+        <div class="gallery-item" data-category="carnes">
+            <img src="imagenes/IMG-20250905-WA0014.jpg" 
+                 alt="Lomo al Champiñón"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Lomo al Champiñón</h3>
             <p>Tiernos medallones de lomo en una rica salsa de champiñones, cebollita y crema, servidos con puré de calabaza.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0011.jpg" alt="Milanesa napolitana">
+        <div class="gallery-item" data-category="milanesas">
+            <img src="imagenes/IMG-20250905-WA0011.jpg" 
+                 alt="Milanesa napolitana"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Milanesa Napolitana</h3>
             <p>Milanesa napolitana es un plato clásico de la gastronomía rioplatense con raíces italianas, carne jugosa y crujiente, cubierta con jamón, tomate fresco y queso fundido gratinado al punto justo.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0027.jpg" alt="Milanesa a la suiza">
+        <div class="gallery-item" data-category="milanesas">
+            <img src="imagenes/IMG-20250905-WA0027.jpg" 
+                 alt="Milanesa a la suiza"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Milanesa a la Suiza</h3>
             <p>Milanesa a la suizaes un plato clásico de la gastronomía rioplatense con raíces europeas, carne jugosa y crujiente, cubierta con salsa blanca, jamón y queso gratinado al punto justo.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0026.jpg" alt="Milanesa a caballo">
+        <div class="gallery-item" data-category="milanesas">
+            <img src="imagenes/IMG-20250905-WA0026.jpg" 
+                 alt="Milanesa a caballo"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Milanesa a Caballo</h3>
             <p>Clásica milanesa de ternera, crujiente y jugosa, coronada con un huevo frito, acompañada de guarnición a elección y un delicado toque de hierbas frescas que realza su sabor.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0032.jpg" alt="Bife de chorizo">
+        <div class="gallery-item" data-category="carnes">
+            <img src="imagenes/IMG-20250905-WA0032.jpg" 
+                 alt="Bife de chorizo"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Bife de Chorizo</h3>
             <p>Bife de chorizo, jugoso y tierno, acompañado de papas aplastadas doradas y crujientes por fuera, con un toque de hierbas que realza su sabor.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 21.13.01_73d88657.jpg" alt="Empanadas Arabes">
+        <div class="gallery-item" data-category="empanadas">
+            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 21.13.01_73d88657.jpg" 
+                 alt="Empanadas Arabes"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Empanadas Árabes</h3>
             <p>Deliciosas empanadas árabes rellenas de carne especial, sazonadas con cebolla, morrón y un toque de limón.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250518-WA0016.jpg" alt="Milanesa Los Troncos">
+        <div class="gallery-item" data-category="milanesas">
+            <img src="imagenes/IMG-20250518-WA0016.jpg" 
+                 alt="Milanesa Los Troncos"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Milanesa Los Troncos</h3>
             <p>Carne de ternera dorada, cubierta con mozzarella y cheddar fundidos, coronada con panceta crocante y huevo frito, acompañada de guarnición a elección.</p>
         </div>
-            <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0028.jpg" alt="Sandwich Ibirá">
+            <div class="gallery-item" data-category="sandwiches">
+            <img src="imagenes/IMG-20250905-WA0028.jpg" 
+                 alt="Sandwich Ibirá"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Sandwich Ibirá</h3>
             <p>Pan árabe relleno de carne desmechada al vino tinto, cebolla y morrones salteados, con suave salsa de ajo y especias.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0019.jpg" alt="Pizza kurupi">
+        <div class="gallery-item" data-category="pizza">
+            <img src="imagenes/IMG-20250905-WA0019.jpg" 
+                 alt="Pizza kurupi"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Pizza Kurupi</h3>
             <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozzarella con carne de ternera picada a cuchillo y cebolla caramelizada.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0017.jpg" alt="Pizza Araticú">
+        <div class="gallery-item" data-category="pizza">
+            <img src="imagenes/IMG-20250905-WA0017.jpg" 
+                 alt="Pizza Araticú"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Pizza Araticú</h3>
             <p>Exquisita pizza con masa artesanal, rellena de queso mozzarella, queso provolone, jamón, morrones asados y cubierta de cebolla, oliva y orégano.</p>
         </div>
-        <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 22.01.29_07d60744.jpg" alt="Hambur Pizza">
+        <div class="gallery-item" data-category="pizza">
+            <img src="imagenes/Imagen de WhatsApp 2025-09-14 a las 22.01.29_07d60744.jpg" 
+                 alt="Hambur Pizza"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Hambur Pizza</h3>
             <p>Deliciosa pizza con masa artesanal, salsa de tomate, queso mozarella, con cuatro medallones de carne, tomate y huevo frito .</p>
         </div>
-                <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0016.jpg" alt="Sandwich Loro negro">
+                <div class="gallery-item" data-category="sandwiches">
+            <img src="imagenes/IMG-20250905-WA0016.jpg" 
+                 alt="Sandwich Loro negro"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Sandwich Loro negro</h3>
             <p>Delicioso sándwich con pan artesanal, con una milanesa de carne de la casa, lechuga, tomate, huevo frito, jamón y queso. Con guarnición.</p>
         </div>
-                <div class="gallery-item">
-            <img src="imagenes/IMG-20250905-WA0023.jpg" alt="Empanadas capresse">
+                <div class="gallery-item" data-category="empanadas">
+            <img src="imagenes/IMG-20250905-WA0023.jpg" 
+                 alt="Empanadas capresse"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Empanadas Capresse</h3>
             <p>Deliciosas empanadas rellenas de mozzarella, tomate y albahaca, acompañadas de salsa de pesto.</p>
         </div>
-                <div class="gallery-item">
-            <img src="imagenes/IMG-20250920-WA0015.jpg" alt="Hamburguesa Tacuarembó">
+                <div class="gallery-item" data-category="hamburguesas">
+            <img src="imagenes/IMG-20250920-WA0015.jpg" 
+                 alt="Hamburguesa Tacuarembó"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Hamburguesa Tacuarembó</h3>
             <p>Hamburguesa con doble medallón de carne, con cebolla caramelizada, queso cheddar y bacon, acompañada de papas fritas.</p>
         </div>
-                <div class="gallery-item">
-            <img src="imagenes/IMG-20250920-WA0017.jpg" alt="Hamburguesa Cedro Misionero">
+                <div class="gallery-item" data-category="hamburguesas">
+            <img src="imagenes/IMG-20250920-WA0017.jpg" 
+                 alt="Hamburguesa Cedro Misionero"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Hamburguesa Cedro Misionero</h3>
             <p>Hamburguesa con medallón de carne jamón, doble queso, panceta, lechuga, tomates cherry caramelizados y huevo frito. Acompañada de guarnición.</p>
         </div>
-                <div class="gallery-item">
-            <img src="imagenes/IMG-20250517-WA0016.jpg" alt="Patel de papa">
+                <div class="gallery-item" data-category="otros">
+            <img src="imagenes/IMG-20250517-WA0016.jpg" 
+                 alt="Patel de papa"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Pastel de papa</h3>
             <p>Pastel de Papa Casero, Suave puré de papas cremoso, relleno con carne especiada y gratinado al horno, en una combinación cálida y reconfortante de sabor casero con un toque gourmet.</p>
         </div>
-                <div class="gallery-item">
-            <img src="imagenes/Imagen de WhatsApp 2025-09-20 a las 12.19.15_8cf4c72e.jpg" alt="Empanadas de verduras">
+                <div class="gallery-item" data-category="empanadas">
+            <img src="imagenes/Imagen de WhatsApp 2025-09-20 a las 12.19.15_8cf4c72e.jpg" 
+                 alt="Empanadas de verduras"
+                 loading="lazy"
+                 data-tooltip="Click para ver en grande">
             <h3>Empanadas de verduras</h3>
             <p>Deliciosas empanadas de verduras y queso.</p>
         </div>
+    </div>
 </section>
 
 <!-- Nueva sección de servicios -->
@@ -238,25 +321,81 @@ include 'include/header.php';
     </div>
     
     <div class="services-cta">
-        <h3>¿Interesado en nuestros servicios?</h3>
-        <div class="cta-logo">
-            <img src="imagenes/LOGO_LOS_TRONCOS.jpg" alt="Los Troncos Resto Bar" class="cta-logo-image">
+        <a href="https://wa.me/5493743611895?text=Hola! Me interesa información sobre...." class="whatsapp-btn-main" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Contactar por WhatsApp
+        </a>
+    </div>
+</section>
+
+<!-- Nueva sección de Carta/Menú -->
+<section id="nuestra-carta" class="section menu-section">
+    <div class="menu-header">
+        <h2>Nuestra Carta</h2>
+        <p>Descubre nuestra completa selección de platos, bebidas y especialidades</p>
+    </div>
+    
+    <div class="menu-content">
+        <div class="menu-info">
+            <div class="menu-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <h3>Explora Nuestro Menú Completo</h3>
+            <p>Descarga o visualiza nuestra carta completa con todas nuestras especialidades, pizzas artesanales, carnes premium, bebidas y mucho más.</p>
+            
+            <div class="menu-features">
+                <div class="menu-feature">
+                    <i class="fas fa-pizza-slice"></i>
+                    <span>Pizzas Artesanales</span>
+                </div>
+                <div class="menu-feature">
+                    <i class="fas fa-hamburger"></i>
+                    <span>Hamburguesas Gourmet</span>
+                </div>
+                <div class="menu-feature">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <span>Carnes Premium</span>
+                </div>
+                <div class="menu-feature">
+                    <i class="fas fa-cocktail"></i>
+                    <span>Bebidas & Tragos</span>
+                </div>
+            </div>
         </div>
-        <p>Contactanos para más información y reservas</p>
-        <div class="contact-info">
-            <p class="whatsapp-number">
-                <i class="fab fa-whatsapp"></i> 
-                WhatsApp: <strong>+54 3743-311895</strong>
-            </p>
+        
+        <div class="menu-pdf-container">
+            <div class="pdf-preview">
+                <iframe src="documentos/carta.pdf" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0"
+                        title="Carta de Los Troncos Resto Bar"
+                        loading="lazy">
+                </iframe>
+            </div>
+            
+            <div class="menu-actions">
+                <a href="documentos/carta.pdf" 
+                   class="btn-menu btn-view" 
+                   target="_blank"
+                   data-tooltip="Ver en pantalla completa">
+                    <i class="fas fa-expand"></i>
+                    Ver Carta Completa
+                </a>
+                <a href="documentos/carta.pdf" 
+                   class="btn-menu btn-download" 
+                   download="Carta_Los_Troncos_RestoBar.pdf"
+                   data-tooltip="Descargar en tu dispositivo">
+                    <i class="fas fa-download"></i>
+                    Descargar PDF
+                </a>
+            </div>
         </div>
-        <div class="contact-buttons">
-            <a href="https://wa.me/5493755123456?text=Hola! Me interesa información sobre sus servicios de catering y rodizios." class="btn-primary" target="_blank">
-                <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
-            </a>
-            <a href="https://www.instagram.com/lostroncos_restobar/" class="btn-secondary" target="_blank">
-                <i class="fab fa-instagram"></i> Seguir en Instagram
-            </a>
-        </div>
+    </div>
+    
+    <div class="menu-note">
+        <i class="fas fa-info-circle"></i>
+        <p>Los precios y disponibilidad pueden variar. Para información actualizada, consultá con nuestro personal.</p>
     </div>
 </section>
 
