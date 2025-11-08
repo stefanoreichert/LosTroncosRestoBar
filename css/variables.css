@@ -1,0 +1,11 @@
+/* Variables CSS para mantener consistencia */
+:root {
+    --primary-color: #5C7C8A;
+    --secondary-color: #A86443;
+    --text-dark: #333333;
+    --text-light: #F8F8F8;
+    --bg-light: #FFFFFF;
+    --bg-dark: #2C3E50;
+    --border-color: #E0E0E0;
+    --scale-factor: 0.9;
+}
